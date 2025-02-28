@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Alumno { //Los identificadores (nombres) de las clases comienzan por MAY y van en singular
     private String DNI;  //Atributos de instancia: son aquellos atributos de los que cada objeto va a tener un valor
     private int NP;
@@ -41,7 +43,7 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
 
     public void setNP(int NP) {
         if (NP<0){
-            throw new IllegalArgumentException("DNI incorrecto");
+            throw new IllegalArgumentException("NP incorrecto");
         }
       this.NP = NP;
     }
@@ -52,6 +54,20 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
 
     public void setNombreCompleto(String nombreCompleto) {
         this.nombreCompleto = nombreCompleto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        Alumno alumno = (Alumno) o;
+        //return this.NP == alumno.NP ; //mejor utilizar los métodos definidos
+        return this.getNP() == alumno.getNP() ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(DNI);
     }
 
     @Override
