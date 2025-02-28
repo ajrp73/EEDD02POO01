@@ -15,8 +15,8 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
         if ( !Character.isDigit(primerDigito)){
             throw new IllegalArgumentException("DNI incorrecto");
         }
-        if (NPp<=0){
-            throw new IllegalArgumentException("DNI incorrecto");
+        if (NPp<0){
+            throw new IllegalArgumentException("NP incorrecto");
         }
         DNI= DNIp;
         NP= NPp;
@@ -40,7 +40,7 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
     }
 
     public void setNP(int NP) {
-        if (NP<=0){
+        if (NP<0){
             throw new IllegalArgumentException("DNI incorrecto");
         }
       this.NP = NP;
