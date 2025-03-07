@@ -5,6 +5,10 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
     private int NP;
     private String nombreCompleto;
 
+    public static String getUniveridad(){ //Método de clase (NO de instancia)
+        return "UAX";
+    }
+
     public Alumno(){ //Método constructor por defecto
                      //Si no se indica nada, se asignan valores por defecto
         DNI="00.000.000-E";
@@ -76,6 +80,7 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
                 "DNI='" + DNI + '\'' +
                 ", NP=" + NP +
                 ", nombreCompleto='" + nombreCompleto + '\'' +
+                ", universidad='" + getUniveridad() + '\'' +
                 '}';
     }
 }

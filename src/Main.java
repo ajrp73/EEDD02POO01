@@ -8,6 +8,14 @@ public class Main {
         System.out.println("a1: " + a1.toString()); //"00...  0 "nombre   "
         System.out.println("a2: " + a2.toString());//"11 123 Asdas asdasd aadad"
 
+        /* System.out.println("a1 universidad: " + a1.getUniversidad());
+        Los métodos de clase como NO son métodos de instancia, no pueden ser invocados
+        a partir de un objeto
+         */
+
+        //Los métodos de clase (static) pueden ser invocados a partir de la clase
+        System.out.println("Universidad: " + Alumno.getUniveridad());
+
         Alumno a3= a2;
         System.out.println("a3: " + a3.toString());//"11 123 Asdas asdasd aadad"
         Alumno a4= new Alumno("11.111.111-A", 200111, "Asdas asdasd aadad");
