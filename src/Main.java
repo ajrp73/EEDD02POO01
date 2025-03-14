@@ -13,7 +13,9 @@ public class Main {
         a partir de un objeto
          */
 
-        //Los métodos de clase (static) pueden ser invocados a partir de la clase
+        //Los métodos de clase (static) pueden ser invocados sobre los objetos creados,
+        // pero también (Lo que los distingue) A PARTIR DE LA CLASE
+        System.out.println("Universidad: " + a1.getUniveridad());
         System.out.println("Universidad: " + Alumno.getUniveridad());
 
         Alumno a3= a2;
@@ -50,9 +52,9 @@ public class Main {
         }
 
         if(a2.equals(a4)){
-            System.out.println("a2 y a4 son objetos que se consideran iguales porque tienen el mismo DNI" );
+            System.out.println("a2 y a4 son objetos que se consideran iguales porque tienen el mismo NP" );
         }else{
-            System.out.println("a2 y a4 son objetos que no se consideran iguales porque no tienen el mismo DNI\" ");
+            System.out.println("a2 y a4 son objetos que no se consideran iguales porque no tienen el mismo NP\" ");
         }
         if(a2.hashCode() == a4.hashCode()){
             System.out.println("a2 y a4 son objetos que tienen el mismo hashCode" );

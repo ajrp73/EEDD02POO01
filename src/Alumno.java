@@ -5,8 +5,14 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
     private int NP;
     private String nombreCompleto;
 
+    private static String universidad = "UAX"; //Atributo de clase, se almacena en el espacio de la clase
+                                               //y NO en cada uno de los objetos. Sólo se almacena una vez
+
     public static String getUniveridad(){ //Método de clase (NO de instancia)
-        return "UAX";
+        return universidad;
+    }
+    public static void setUniversidad(String u){
+        universidad= u;
     }
 
     public Alumno(){ //Método constructor por defecto
@@ -71,16 +77,16 @@ public class Alumno { //Los identificadores (nombres) de las clases comienzan po
 
     @Override
     public int hashCode() {
-        return Objects.hash(DNI);
+        return Objects.hash(NP);
     }
 
     @Override
     public String toString() {
         return "Alumno{" +
                 "DNI='" + DNI + '\'' +
-                ", NP=" + NP +
+                ", NP=" + getNP() +
                 ", nombreCompleto='" + nombreCompleto + '\'' +
-                ", universidad='" + getUniveridad() + '\'' +
+                ", universidad='" + getUniveridad() + '\'' +    //Podemos hacer uso de un método de clase
                 '}';
     }
 }
